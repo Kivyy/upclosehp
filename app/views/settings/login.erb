@@ -1,0 +1,15 @@
+<% if @errors %>
+  <%= erb :"_error" %>
+<% end %>
+
+
+<form class="w3-container" method="post" action="/login">
+  <h2>Login :</h2>
+  <input class="w3-input" type="text" name="user[username]">
+  <label>Username</label>
+  <br>
+  <input class="w3-input" type="text">
+  <label>Password</label>
+  <br>
+  <input class="w3-button w3-black" type="submit" value="Login">
+</form>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/css/application.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+    background-image: url('https://s-media-cache-ak0.pinimg.com/originals/66/cf/b5/66cfb5baca7af373c9b2afaed1e8849d.jpg');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+</style>
+<body>
+  <nav>
+  <div class="w3-bar w3-black">
+    <a class="w3-bar-item w3-button" href="/users">Home</a>
+    <% if logged_in %>
+    <a class="w3-bar-item w3-button" href="/logout">Logout</a>
+    <a class="w3-bar-item w3-button" href="#"><%= current_user.username %></a>
+    <% else %>
+    <a class="w3-bar-item w3-button" href="/users/new">Register</a>
+    <a class="w3-bar-item w3-button" href="/login">Login</a>
+    <% end %>
+  </div>
+  </nav>
+<%= yield %>
+</body>
+</html>

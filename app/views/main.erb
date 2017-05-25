@@ -1,0 +1,31 @@
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-topleft w3-padding-large w3-xlarge">
+    <p class="w3-large w3-center"><%= @time.ctime %></p>
+  </div>
+
+  <div class="w3-display-topright">
+    <p class="w3-large w3-center">Quote of the day : </p>
+    <div  id="yo">
+      <p class="w3-small w3-center"><%= @quote[0]["content"] %> </p>
+    </div>
+    <p class="w3-small w3-center"><%= @quote[0]["title"] %> </p>
+  </div>
+
+  <% if logged_in %>
+  <div class="w3-display-middle">
+    <hr class="w3-border-grey" style="margin:auto;width:80%">
+    <h1 class="w3-jumbo w3-animate-top">Welcome <%= current_user.username %></h1>
+    <p class="w3-large w3-center w3-animate-bottom"><%= @weather.title %></p>
+    <p class="w3-medium w3-center w3-animate-bottom"><%= @weather.condition.temp %>F</p>
+    <p class="w3-small w3-center w3-animate-bottom"><%= @weather.condition.text %></p>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+  </div>
+  <%else %>
+    <div class="w3-display-middle">
+      <h1 class="w3-jumbo w3-animate-top">Welcome</h1>
+      <hr class="w3-border-grey" style="margin:auto;width:40%">
+      <!-- <p class="w3-large w3-center">35 days left</p> -->
+    </div>
+  <% end %>
+
+</div>

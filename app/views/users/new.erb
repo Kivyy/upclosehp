@@ -1,0 +1,21 @@
+<% if @errors %>
+  <%= erb :"_error" %>
+<% end %>
+
+
+
+
+<form class="w3-container" action="/users" method="post">
+  <h2>Register</h2>
+  <label>First Name :</label>
+  <input class="w3-input" type="text" name="user[first_name]" placeholder="First Name"><br>
+  <label>Last Name :</label>
+  <input class="w3-input" type="text" name="user[last_name]" placeholder="Last Name"><br>
+  <label>Username :</label>
+  <input class="w3-input" type="text" name="user[username]" placeholder="Username"><br>
+  <label>Password :</label>
+  <input class="w3-input" type="text" name="user[password]" placeholder="Password"><br>
+  <label>Location:</label>
+  <input class="w3-input" type="text" name="user[location]" placeholder="Location"><br>
+  <input class="w3-button w3-black" type="submit" value="Register">
+</form>
