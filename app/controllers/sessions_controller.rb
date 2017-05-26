@@ -8,10 +8,9 @@ end
 
 post '/login' do
   @user = User.find_by(username: params[:user][:username])
-  binding.pry
   if @user && @user.authenticate(params[:user][:password])
     session[:user_id] = @user.id
-    erb :"/main"
+    redirect '/'
   else
     @errors = ["Wrong password", "Wrong username"]
     erb :"/settings/login"

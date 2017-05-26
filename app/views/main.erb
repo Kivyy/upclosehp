@@ -1,15 +1,15 @@
 <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+
+
+  <% if logged_in %>
   <div class="w3-display-topleft w3-padding-large w3-xlarge">
     <p class="w3-large w3-center"><%= @time.ctime %></p>
   </div>
-
   <div class="w3-display-topmiddle">
     <p>Quote of the day : </p>
     <p><%= @quote[0]["content"] %> </p>
     <p>- <%= @quote[0]["title"] %> </p>
   </div>
-
-  <% if logged_in %>
   <div class="w3-display-middle">
     <hr class="w3-border-grey" style="margin:auto;width:80%">
     <h1 class="w3-jumbo w3-animate-top">Welcome <%= current_user.first_name %> <%= current_user.last_name %></h1>
