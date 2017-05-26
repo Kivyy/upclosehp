@@ -10,14 +10,14 @@ $(document).ready(function() {
     })
   });
 
-  $("span#form").on("submit",".loginsubmit",function(event){
-    event.preventDefault();
-    var url = $(this).attr("action");
-    var data = $(this).serialize();
-    $.ajax({
-      method: "POST",
-      url: url,
-      data: data,
-    })
-  });
+  // $("span#form").on("submit",".loginsubmit",function(event){
+  //   event.preventDefault();
+  //   var url = $(this).attr("action");
+  //   var data = $(this).serialize();
+  //   $.ajax({
+  //     method: "POST",
+  //     url: url,
+  //     data: data,
+  //   })
+  // });
 });
