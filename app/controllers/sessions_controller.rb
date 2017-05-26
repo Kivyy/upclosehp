@@ -13,10 +13,10 @@ if request.xhr?
   if @user && @user.authenticate(params[:user][:password])
     session[:user_id] = @user.id
 
-    erb :"/main"
+    redirect '/'
   else
     @errors = ["Wrong password", "Wrong username"]
-    erb :"/settings/login", layout: false
+    erb :"/settings/login"
   end
 
 else
@@ -28,7 +28,7 @@ else
     @errors = ["Wrong password", "Wrong username"]
     erb :"/settings/login"
   end
-end 
+end
 end
 
 get '/logout' do
