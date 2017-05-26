@@ -3,28 +3,34 @@
     <p class="w3-large w3-center"><%= @time.ctime %></p>
   </div>
 
-  <div class="w3-display-topright">
-    <p class="w3-large w3-center">Quote of the day : </p>
-    <div  id="yo">
-      <p class="w3-small w3-center"><%= @quote[0]["content"] %> </p>
-    </div>
-    <p class="w3-small w3-center"><%= @quote[0]["title"] %> </p>
+  <div class="w3-display-topmiddle">
+    <p>Quote of the day : </p>
+    <p><%= @quote[0]["content"] %> </p>
+    <p>- <%= @quote[0]["title"] %> </p>
   </div>
 
   <% if logged_in %>
   <div class="w3-display-middle">
     <hr class="w3-border-grey" style="margin:auto;width:80%">
-    <h1 class="w3-jumbo w3-animate-top">Welcome <%= current_user.username %></h1>
+    <h1 class="w3-jumbo w3-animate-top">Welcome <%= current_user.first_name %> <%= current_user.last_name %></h1>
     <p class="w3-large w3-center w3-animate-bottom"><%= @weather.title %></p>
     <p class="w3-medium w3-center w3-animate-bottom"><%= @weather.condition.temp %>F</p>
     <p class="w3-small w3-center w3-animate-bottom"><%= @weather.condition.text %></p>
     <hr class="w3-border-grey" style="margin:auto;width:40%">
   </div>
+
+  <div class="w3-display-bottommiddle" style="bottom: 90px">
+    <p class="w3-medium w3-center">Random song of the day : </p>
+    <p class="w3-medium w3-center"><%= @track.name %></p>
+    <iframe src="https://open.spotify.com/embed?uri=<%= @song %>"
+        width="250" height="80" frameborder="0" allowtransparency="true"></iframe>
+  </div>
   <%else %>
     <div class="w3-display-middle">
       <h1 class="w3-jumbo w3-animate-top">Welcome</h1>
       <hr class="w3-border-grey" style="margin:auto;width:40%">
-      <!-- <p class="w3-large w3-center">35 days left</p> -->
+      <span id="form">
+      </span>
     </div>
   <% end %>
 

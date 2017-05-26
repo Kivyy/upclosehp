@@ -16,6 +16,7 @@ gem 'pry'
 gem 'pry-byebug'
 gem 'bcrypt'
 gem 'yt'
+gem 'rspotify'
 
 gem 'shotgun', '~>0.9.1'
 

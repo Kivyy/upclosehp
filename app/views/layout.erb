@@ -1,9 +1,13 @@
 <!DOCTYPE html>
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/css/application.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="/js/jquery.js"></script>
+<script src="/js/application.js"></script>
 <style>
 body,h1 {font-family: "Raleway", sans-serif}
 body, html {height: 100%}
@@ -14,6 +18,7 @@ body, html {height: 100%}
     background-size: cover;
 }
 </style>
+</head>
 <body>
   <nav>
   <div class="w3-bar w3-black">
@@ -23,7 +28,7 @@ body, html {height: 100%}
     <a class="w3-bar-item w3-button" href="#"><%= current_user.username %></a>
     <% else %>
     <a class="w3-bar-item w3-button" href="/users/new">Register</a>
-    <a class="w3-bar-item w3-button" href="/login">Login</a>
+    <a class="w3-bar-item w3-button loginn" href="/login">Login</a>
     <% end %>
   </div>
   </nav>
